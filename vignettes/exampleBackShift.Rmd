@@ -1,6 +1,6 @@
 ---
 title: "Learning cyclic causal graphs with backShift"
-author: "Christina Heinze"
+author: "Christina Heinze-Deml"
 date: "`r Sys.Date()`"
 output:
       rmarkdown::html_vignette:
@@ -8,7 +8,7 @@ output:
 vignette: >
   %\VignetteIndexEntry{backShift demo}
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+  \usepackage[utf8]{inputenc}
 
 status: process
 ---
