@@ -4,9 +4,17 @@
 \alias{plotGraphEdgeAttr}
 \title{Plotting function to visualize directed graphs}
 \usage{
-plotGraphEdgeAttr(estimate, plotStabSelec, labels, thres.point,
-  edgeWeights = NULL, thres.stab = 0.75, main = "", edge.color = "blue",
-  ...)
+plotGraphEdgeAttr(
+  estimate,
+  plotStabSelec,
+  labels,
+  thres.point,
+  edgeWeights = NULL,
+  thres.stab = 0.75,
+  main = "",
+  edge.color = "blue",
+  ...
+)
 }
 \arguments{
 \item{estimate}{Estimate of connectivity matrix. This can be a point estimate

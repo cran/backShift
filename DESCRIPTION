@@ -1,12 +1,11 @@
 Package: backShift
 Type: Package
 Title: Learning Causal Cyclic Graphs from Unknown Shift Interventions
-Version: 0.1.4.2
-Date: 2017-09-07
+Version: 0.1.4.3
+Date: 2020-05-06
 Author: Christina Heinze-Deml <heinzedeml@stat.math.ethz.ch>
 Depends: R (>= 3.1.0)
-Imports: methods, clue, igraph, matrixcalc, reshape2, ggplot2, mvnmle,
-        MASS
+Imports: methods, clue, igraph, matrixcalc, reshape2, ggplot2, MASS
 Maintainer: Christina Heinze-Deml <heinzedeml@stat.math.ethz.ch>
 Description: Code for 'backShift', an algorithm to estimate the connectivity
     matrix of a directed (possibly cyclic) graph with hidden variables. The
@@ -19,8 +18,8 @@ Suggests: knitr, pander, fields, testthat, pcalg, rmarkdown
 VignetteBuilder: knitr
 URL: https://github.com/christinaheinze/backShift
 BugReports: https://github.com/christinaheinze/backShift/issues
-RoxygenNote: 6.0.1
+RoxygenNote: 7.0.2
 NeedsCompilation: yes
-Packaged: 2017-09-07 10:01:26 UTC; heinzec
+Packaged: 2020-05-06 10:46:52 UTC; heinzec
 Repository: CRAN
-Date/Publication: 2017-09-07 10:52:10 UTC
+Date/Publication: 2020-05-06 11:30:03 UTC

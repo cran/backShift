@@ -4,8 +4,20 @@
 \alias{simulateInterventions}
 \title{Simulate data of a causal cyclic model under shift interventions.}
 \usage{
-simulateInterventions(n, p, A, G, intervMultiplier, noiseMult, nonGauss,
-  hiddenVars, knownInterventions, fracVarInt, simulateObs, seed = 1)
+simulateInterventions(
+  n,
+  p,
+  A,
+  G,
+  intervMultiplier,
+  noiseMult,
+  nonGauss,
+  hiddenVars,
+  knownInterventions,
+  fracVarInt,
+  simulateObs,
+  seed = 1
+)
 }
 \arguments{
 \item{n}{Number of observations.}

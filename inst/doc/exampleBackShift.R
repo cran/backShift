@@ -1,4 +1,4 @@
-## ---- message = FALSE----------------------------------------------------
+## ---- message = FALSE---------------------------------------------------------
 # load package
 require(backShift)
 require(ggplot2)
@@ -8,21 +8,21 @@ require(fields)
 seed <- 1
 set.seed(seed)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # use covariance matrix instead of Gram matrix
 useCov <- TRUE 
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # bound on expected number of false selections for stability selection
 EV <- 2
 # selection threshold for stability selection
 thres <- 0.75 
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # threshold for point estimate 
 thres.pe <- 0.25
 
-## ---- results = "hide"---------------------------------------------------
+## ---- results = "hide"--------------------------------------------------------
 # number of variables
 p <- 10
 
@@ -51,7 +51,7 @@ if(providedA){
   cat("A has a cycle of size", A.gen.result$sizeCycle, "\n") 
 }
 
-## ---- results = "hide"---------------------------------------------------
+## ---- results = "hide"--------------------------------------------------------
 # number of observations
 n <- 10000
 # number of environments
@@ -83,7 +83,7 @@ X <- simulation.res$X
 env <- simulation.res$environment
 baseInd <- simulation.res$configs$indexObservationalData
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 ## Run backShift -------
 backshift.res <- backShift(X, env, covariance=useCov, ev=EV, threshold=thres, 
                         baseSettingEnv = baseInd, tolerance = 1e-6, 
@@ -112,22 +112,22 @@ plotGraphEdgeAttr(estimate = Ahat.structure, plotStabSelec = TRUE,
                   edgeWeights = Ahat, thres.stab = thres, 
                   main = "Stability selection result")
 
-## ---- results = "asis"---------------------------------------------------
+## ---- results = "asis"--------------------------------------------------------
 # metrics for point estimate, thresholded at thres.pe
 metricsThresholdedA <- metricsThreshold(A, Ahat, thres = thres.pe)
 
 # metrics for stability selection result
 metricsStabSelection <- metricsThreshold(A, Ahat.structure, thres = 0)
 
-## ---- results = "asis", echo = FALSE-------------------------------------
+## ---- results = "asis", echo = FALSE------------------------------------------
 colnames(metricsThresholdedA)[3] <- colnames(metricsStabSelection)[3] <- "TPR/Recall"
 knitr::kable(metricsThresholdedA, digits = 4, caption = paste("Metrics for point estimate, thresholded at", thres.pe))
 knitr::kable(metricsStabSelection, digits = 4, caption = "Metrics for stability selection result")
 
-## ---- message=FALSE, fig.width=10, fig.height=7.5------------------------
+## ---- message=FALSE, fig.width=10, fig.height=7.5-----------------------------
 plotInterventionVars(backshift.res$varianceEnv, simulation.res$interventionVar)
 
-## ---- fig.keep='all', fig.width=3, fig.height=3--------------------------
+## ---- fig.keep='all', fig.width=3, fig.height=3-------------------------------
 for(i in 1:G){
   plotDiagonalization(estConnectivity = backshift.res$Ahat, X = X, env = env, whichEnv = i)
 }

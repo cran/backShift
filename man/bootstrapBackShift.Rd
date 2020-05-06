@@ -6,8 +6,17 @@
 procedure. The model-based bootstrap approach assumes normally distributed error terms; the
 parameters of the noise distribution are estimated with maximum likelihood.}
 \usage{
-bootstrapBackShift(Ahat, X, ExpInd, nrep, alpha = 0.05, covariance = TRUE,
-  baseInd = 1, tolerance = 0.001, verbose = FALSE)
+bootstrapBackShift(
+  Ahat,
+  X,
+  ExpInd,
+  nrep,
+  alpha = 0.05,
+  covariance = TRUE,
+  baseInd = 1,
+  tolerance = 0.001,
+  verbose = FALSE
+)
 }
 \arguments{
 \item{Ahat}{Estimated connectivity matrix returned by \code{backShift}.}
